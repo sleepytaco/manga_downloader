@@ -1,0 +1,8 @@
+DOWNLOADS DIRECTORY: DEFAULT
+DOWNLOAD ALL CHAPTERS: NO
+CONFIRM BEFORE STARTING DOWNLOADS: YES
+
+INFO
+- Setting download directory to DEFAULT creates a download folder where the exe file is.
+- DOWNLOAD ALL CHAPTERS specifes whether to download a range of chapters or to download all chapters found.
+- If invalid input is entered, default options will be used.
