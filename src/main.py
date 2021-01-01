@@ -12,6 +12,8 @@ https://m.manganelo.com
 PROGRAM_LOCATION = Path.cwd()
 SUPPORTED_SITES = ' https://mangakakalot.com/ https://manganelo.com/manga/ https://m.manganelo.com'.split(' ')
 
+os.environ['PATH'] += os.pathsep + str(PROGRAM_LOCATION / 'driver')  # set gecko driver location in path
+
 ### CHECK FOR SETTINGS.TXT FILE BEFORE STARTING ###
 if 'settings.txt' not in os.listdir(PROGRAM_LOCATION):
     print(f"'settings.txt' file not found near program location ({PROGRAM_LOCATION}). Making a new settings.txt there...")

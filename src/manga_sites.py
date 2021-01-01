@@ -166,6 +166,10 @@ class Mangakakalot:
                     print("Enter a valid range in the form [number]-[number]")
                     chapter_range = str(input(f"\nEnter range (eg. 0-{len(CHAPTER_LINK_ELTS) - 1}): "))
                     r = rangeRegex.search(chapter_range)
+
+                    if r is None:
+                        continue
+
                     start, end = r.group().split("-")
                     if 0 <= int(end) <= len(CHAPTER_LINK_ELTS) - 1 and 0 <= int(start) <= int(end) - 1:
                         if not int(start) <= int(end):
@@ -224,7 +228,18 @@ class Mangakakalot:
         print("\n\n----- STARTING DOWNLOADS -----")
         print("\nOpening Firefox...")
 
-        browser = webdriver.Firefox(WEBDRIVER_LOCATION)
+        try:
+            browser = webdriver.Firefox(WEBDRIVER_LOCATION)
+        except OSError:
+            print("\nUh-oh looks like Selenium has trouble running on your OS. Are you on Windows 10 and with Python version 3.7+? Is the driver folder in the same place as the .exe file?")
+            input('\nPress Enter to quit.')
+            sys.exit()
+        except:
+            print("\nCannot locate the driver folder in the program location. Move the driver folder to the program location and run the exe file again.")
+            input('\nPress Enter to quit.')
+            sys.exit()
+
+
         browser.implicitly_wait(10)
 
         count = 1
@@ -403,6 +418,10 @@ class Manganelo:
                     print("Enter a valid range in the form [number]-[number]")
                     chapter_range = str(input(f"\nEnter range (eg. 0-{len(CHAPTER_LINK_ELTS) - 1}): "))
                     r = rangeRegex.search(chapter_range)
+
+                    if r is None:
+                        continue
+
                     start, end = r.group().split("-")
                     if 0 <= int(start) <= len(CHAPTER_LINK_ELTS) - 1 and 0 <= int(end) <= len(CHAPTER_LINK_ELTS) - 1:
                         if not int(start) <= int(end):
@@ -461,7 +480,17 @@ class Manganelo:
         print("\n\n----- STARTING DOWNLOADS -----")
         print("\nOpening Firefox...")
 
-        browser = webdriver.Firefox(WEBDRIVER_LOCATION)
+        try:
+            browser = webdriver.Firefox(WEBDRIVER_LOCATION)
+        except OSError:
+            print("\nUh-oh looks like Selenium has trouble running on your OS. Are you on Windows 10 and with Python version 3.7+? Is the driver folder in the same place as the .exe file?")
+            input('\nPress Enter to quit.')
+            sys.exit()
+        except:
+            print("\nCannot locate the driver folder in the program location. Move the driver folder to the program location and run the exe file again.")
+            input('\nPress Enter to quit.')
+            sys.exit()
+
         browser.implicitly_wait(10)
 
         count = 1
