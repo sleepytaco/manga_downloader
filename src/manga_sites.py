@@ -235,7 +235,7 @@ class Mangakakalot:
             input('\nPress Enter to quit.')
             sys.exit()
         except:
-            print("\nCannot locate the driver folder in the program location. Move the driver folder to the program location and run the exe file again.")
+            print("\nScript is having trouble opening up Firefox on your computer. Try the following:\n1. Make sure you have the latest version of Firefox installed.\n2. Have the driver folder in the same location as the .exe file and run the program again.")
             input('\nPress Enter to quit.')
             sys.exit()
 
@@ -487,7 +487,7 @@ class Manganelo:
             input('\nPress Enter to quit.')
             sys.exit()
         except:
-            print("\nCannot locate the driver folder in the program location. Move the driver folder to the program location and run the exe file again.")
+            print("\nScript is having trouble opening up Firefox on your computer. Try the following:\n1. Make sure you have the latest version of Firefox installed.\n2. Move the driver folder to the program location and run the exe file again.")
             input('\nPress Enter to quit.')
             sys.exit()
 
