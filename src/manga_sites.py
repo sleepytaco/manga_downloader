@@ -77,10 +77,11 @@ def move_to_download_folder(DOWNLOAD_FOLDER):
     if os.path.isdir(DOWNLOAD_FOLDER):
         print("--> Found the download folder.")
     else:
+        if DOWNLOAD_FOLDER != 'DEFAULT':
+            print(f"Did not find the specified download folder.\n")
         if not os.path.isdir("Manga Downloads"):
             os.mkdir("Manga Downloads")
-            print(f"Did not find the specified download folder.\n"
-                  f"Created a new folder named Manga Downloads/ in the program location and moved to it.")
+            print(f"Created a new folder named Manga Downloads/ in the program location and moved to it.")
         else:
             print(f"Moved to {Path.cwd() / 'Manga Downloads'}")
         DOWNLOAD_FOLDER = Path.cwd() / 'Manga Downloads'
@@ -344,7 +345,7 @@ class Mangakakalot:
                 manga_info_file.write(f"Manga: {manga_title}\n")
                 manga_info_file.write(f"Status: {manga_status}\n")
                 manga_info_file.write(f"Latest Chapter: {latest_chapter}\n")
-                manga_info_file.write(f"Total Chapter Count: {len(CHAPTER_LINK_ELTS)}" + "\n")
+                manga_info_file.write(f"Total Chapter Downloads: {len(CHAPTER_LINK_ELTS)}" + "\n")
                 manga_info_file.write(
                     f"\nWas not able to fully download the following {len(not_fully_downloaded)} chapters:")
                 manga_info_file.write("\n" + '\n'.join(not_fully_downloaded))
@@ -461,7 +462,7 @@ class Manganelo:
             manga_info_file.write(f"Manga: {manga_title}\n")
             manga_info_file.write(f"Status: {manga_status}\n")
             manga_info_file.write(f"Latest Chapter: {latest_chapter}\n")
-            manga_info_file.write(f"Total Chapter Count: {len(CHAPTER_LINK_ELTS)}" + "\n")
+            manga_info_file.write(f"Total Chapter Downloads: {len(CHAPTER_LINK_ELTS)}" + "\n")
             manga_info_file.write("\n" + f"Manga Site: {self.manga_page}")
 
         return manga_title, manga_status, latest_chapter, DOWNLOAD_FOLDER, CHAPTER_LINK_ELTS
