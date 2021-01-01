@@ -225,17 +225,17 @@ class Mangakakalot:
         if get_setting('CONFIRM BEFORE STARTING DOWNLOADS').upper() == 'YES':
             input("\nPress enter to start downloading...")
 
-        print("\n\n----- STARTING DOWNLOADS -----")
+        print("\n----- STARTING DOWNLOADS -----")
         print("\nOpening Firefox...")
 
         try:
             browser = webdriver.Firefox(WEBDRIVER_LOCATION)
         except OSError:
-            print("\nUh-oh looks like Selenium has trouble running on your OS. Are you on Windows 10 and with Python version 3.7+? Is the driver folder in the same place as the .exe file?")
+            print("\nUh-oh looks like Selenium has trouble running on your OS. This script has been tested and works on Ubuntu 20, Windows 8.1 and Windows 10.")
             input('\nPress Enter to quit.')
             sys.exit()
         except:
-            print("\nScript is having trouble opening up Firefox on your computer. Try the following:\n1. Make sure you have the latest version of Firefox installed.\n2. Have the driver folder in the same location as the .exe file and run the program again.")
+            print("\nScript is having trouble opening up Firefox on your computer. Try the following:\n1. Make sure you have the latest version of Firefox installed.\n2. Check if the driver folder is in the same location as the .exe file or main.py and run the program again.")
             input('\nPress Enter to quit.')
             sys.exit()
 
@@ -477,17 +477,17 @@ class Manganelo:
         if get_setting('CONFIRM BEFORE STARTING DOWNLOADS').upper() == 'YES':
             input("\nPress enter to start downloading...")
 
-        print("\n\n----- STARTING DOWNLOADS -----")
+        print("\n----- STARTING DOWNLOADS -----")
         print("\nOpening Firefox...")
 
         try:
             browser = webdriver.Firefox(WEBDRIVER_LOCATION)
         except OSError:
-            print("\nUh-oh looks like Selenium has trouble running on your OS. Are you on Windows 10 and with Python version 3.7+? Is the driver folder in the same place as the .exe file?")
+            print("\nUh-oh looks like Selenium has trouble running on your OS. This script has been tested and works on Ubuntu 20, Windows 8.1 and Windows 10.")
             input('\nPress Enter to quit.')
             sys.exit()
         except:
-            print("\nScript is having trouble opening up Firefox on your computer. Try the following:\n1. Make sure you have the latest version of Firefox installed.\n2. Move the driver folder to the program location and run the exe file again.")
+            print("\nScript is having trouble opening up Firefox on your computer. Try the following:\n1. Make sure you have the latest version of Firefox installed.\n2. Check if the driver folder is in the same location as the .exe file or main.py and run the program again.")
             input('\nPress Enter to quit.')
             sys.exit()
 
